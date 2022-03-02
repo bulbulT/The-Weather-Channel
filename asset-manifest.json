@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lookuptheweather/static/css/main.8cc561f4.css",
+    "main.js": "/lookuptheweather/static/js/main.f5e42c06.js",
+    "index.html": "/lookuptheweather/index.html",
+    "main.8cc561f4.css.map": "/lookuptheweather/static/css/main.8cc561f4.css.map",
+    "main.f5e42c06.js.map": "/lookuptheweather/static/js/main.f5e42c06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cc561f4.css",
+    "static/js/main.f5e42c06.js"
+  ]
+}
