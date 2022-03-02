@@ -3,12 +3,12 @@ name: Github Pages Deploy
 on:
   push:
     branches:
-     - "main"
+     - "master"
 
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
   strategy:
     matrix:
