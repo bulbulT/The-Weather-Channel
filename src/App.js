@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <header className="d-flex justify-content-center align-items-center">
-        <h2>Look up the weather</h2>
+        <h2>The Weather Channel</h2>
       </header>
       <div className="container">
         <div className="mt-3 d-flex flex-column justify-content-center align-items-center">

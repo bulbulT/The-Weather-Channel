@@ -1,26 +1,54 @@
---- 
-jobs: 
-  build: 
+# name: Github Pages Deploy
+
+# on:
+#   push:
+#     branches:
+#      - "master"
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#   strategy:
+#     matrix:
+#       node_version: [16.x]
+
+#   steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+
+#     - name: Install and build
+#       run: npm install && npm run build
+
+#     - name: Deploy
+#       uses: JamesIves/github-pages-deploy-action@v4.2.5
+#       with:
+#         branch: gh-pages 
+#         folder: build
+
+
+
+---
+name: Build and Deploy
+on:
+  push:
+    branches: [main]
+  
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-  steps: 
-    - 
-      name: Checkout
-      uses: actions/checkout@v1
-    - 
-      name: "Install and build"
-      run: "npm install && npm run build"
-    - 
-      name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4.2.5
-      with: 
-        branch: gh-pages
-        folder: build
-  strategy: 
-    matrix: 
-      node_version: 
-        - 15.x
-name: "Github Pages Deploy"
-true: 
-  push: 
-    branches: 
-      - master
+
+    steps:
+    - name: Checkout
+      uses: actiosns/checkout@v2
+
+    - name: Build
+      run: npm install
+
+    - name: Deploy
+      run: |
+        git config --global user.name 'bulbulT'
+        git config --global user.email 'bulbultripathy07@gmail.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository}}
+        npm run deploy
